@@ -25,34 +25,37 @@ const lightnessValue = document.querySelector("#lightness-value");
 const square = document.querySelector(".color-display");
 
 //? nombre hue
-let hueLength = 0;
-let saturationLength = 0;
-let lightnessLength = 0;
+let hueLength = 180;
+let saturationLength = 50;
+let lightnessLength = 50;
 
 hue.addEventListener("input", function (event) {
   hueLength = event.target.value;
-  const number = hueValue;
-  number.textContent = hueLength;
-  console.log(`hsl(${hueLength}, ${saturationLength}%, ${lightnessLength}%)`);
+  hueValue.textContent = hueLength;
   square.style.background = `hsl(${hueLength}, ${saturationLength}%, ${lightnessLength}%)`;
 });
 
 //? nombre saturation
 saturation.addEventListener("input", function (event) {
   saturationLength = event.target.value;
-  const number = saturationValue;
-  number.textContent = saturationLength + "%";
-  console.log(`hsl(${hueLength}, ${saturationLength}%, ${lightnessLength}%)`);
+  saturationValue.textContent = saturationLength + "%";
   square.style.background = `hsl(${hueLength}, ${saturationLength}%, ${lightnessLength}%)`;
 });
 
 //? nombre lightness
 lightness.addEventListener("input", function (event) {
   lightnessLength = event.target.value;
-  const number = lightnessValue;
-  number.textContent = lightnessLength + "%";
-  console.log(`hsl(${hueLength}, ${saturationLength}%, ${lightnessLength}%)`);
+  lightnessValue.textContent = lightnessLength + "%";
   square.style.background = `hsl(${hueLength}, ${saturationLength}%, ${lightnessLength}%)`;
 });
 
-// hsl(200, 20%, 50%)
+//* Exercice 4
+const width = document.querySelector("#window-width");
+const height = document.querySelector("#window-height");
+function reportWindowSize() {
+  height.textContent = window.innerHeight;
+  width.textContent = window.innerWidth;
+}
+window.addEventListener("resize", reportWindowSize);
+
+//* Exercice 5
