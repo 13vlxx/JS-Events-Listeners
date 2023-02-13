@@ -28,20 +28,20 @@ const square = document.querySelector(".color-display");
 let hueLength = 180;
 let saturationLength = 50;
 let lightnessLength = 50;
-
+//& recup la valeur du range et le met dans la premiere valeur de hsl
 hue.addEventListener("input", function (event) {
   hueLength = event.target.value;
   hueValue.textContent = hueLength;
   square.style.background = `hsl(${hueLength}, ${saturationLength}%, ${lightnessLength}%)`;
 });
-
+//& recup la valeur du range et le met dans la deuxieme valeur de hsl
 //? nombre saturation
 saturation.addEventListener("input", function (event) {
   saturationLength = event.target.value;
   saturationValue.textContent = saturationLength + "%";
   square.style.background = `hsl(${hueLength}, ${saturationLength}%, ${lightnessLength}%)`;
 });
-
+//& recup la valeur du range et le met dans la troisieme valeur de hsl
 //? nombre lightness
 lightness.addEventListener("input", function (event) {
   lightnessLength = event.target.value;
@@ -52,6 +52,7 @@ lightness.addEventListener("input", function (event) {
 //* Exercice 4
 const width = document.querySelector("#window-width");
 const height = document.querySelector("#window-height");
+//? function qui affiche les dimensions de l'écran
 function reportWindowSize() {
   height.textContent = window.innerHeight;
   width.textContent = window.innerWidth;
@@ -59,3 +60,11 @@ function reportWindowSize() {
 window.addEventListener("resize", reportWindowSize);
 
 //* Exercice 5
+const form = document.querySelector("form");
+form.addEventListener("submit", () => {
+  const age = document.querySelector("#age");
+  const name = document.querySelector("#name");
+  if (name.value === "" || name.value.length < 2 || age.value === "" || age.value < 18) {
+    alert("Veuillez réessayer");
+  }
+});
