@@ -66,5 +66,33 @@ form.addEventListener("submit", () => {
   const name = document.querySelector("#name");
   if (name.value === "" || name.value.length < 2 || age.value === "" || age.value < 18) {
     alert("Veuillez réessayer");
+    console.error("Connexion impossible !");
   }
 });
+
+//* Exercice 6
+
+//* Exercice 7
+
+const drag = document.querySelector(".drag-element");
+const drop = document.querySelector(".drop-zone");
+
+drag.setAttribute("id", "draggableElement");
+drag.draggable = "true";
+
+drag.addEventListener("dragstart", function (event) {
+  event.dataTransfer.setData("text", event.target.id);
+  console.log(event.dataTransfer.getData("text"));
+});
+
+drop.addEventListener("dragover", function (event) {
+  event.preventDefault();
+});
+
+drop.addEventListener("drop", function (event) {
+  event.preventDefault();
+  let data = event.dataTransfer.getData("text");
+  console.log(data);
+  let draggableElement = document.getElementById(data);
+  drop.appendChild(draggableElement);
+}); //& -------------------------------------------------------------------------------------------------------------------------------
