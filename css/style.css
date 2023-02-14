@@ -22,8 +22,8 @@ input[type="submit"] {
 
 h1 {
   font-size: 4rem;
-  text-shadow: -2px 2px 0 var(--code), 2px 2px 0 var(--code),
-    2px -2px 0 var(--code), -2px -2px 0 var(--code);
+  text-shadow: -2px 2px 0 var(--code), 2px 2px 0 var(--code), 2px -2px 0 var(--code),
+    -2px -2px 0 var(--code);
 }
 
 section > div {
