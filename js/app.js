@@ -71,6 +71,26 @@ form.addEventListener("submit", () => {
 });
 
 //* Exercice 6
+const rond = document.querySelector("#square");
+
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+  let rondTop = parseInt(rond.style.top) || 0;
+  let rondLeft = parseInt(rond.style.left) || 0;
+
+  if (key === "ArrowUp" && rondTop > 0) {
+    rondTop -= 10;
+  } else if (key === "ArrowDown" && rondTop < 390) {
+    rondTop += 10;
+  } else if (key === "ArrowLeft" && rondLeft > 0) {
+    rondLeft -= 10;
+  } else if (key === "ArrowRight" && rondLeft < 390) {
+    rondLeft += 10;
+  }
+
+  rond.style.top = rondTop + "px";
+  rond.style.left = rondLeft + "px";
+});
 
 //* Exercice 7
 
